@@ -30,3 +30,6 @@ go http://localhost:8080
 - images/2.jpg
 - images/photo-1423xxx.jpg
 - favicon.ico
+
+## Done
+- compressed html css js to doucument dest
