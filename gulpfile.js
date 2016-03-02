@@ -10,15 +10,24 @@ del = require('del');
 gulp.task('minify_html', function () {
     gulp.src('*.html') // 要压缩的html文件
     .pipe(minifyhtml()) //压缩
-    .pipe(gulp.dest('dest/html'));
+    .pipe(gulp.dest('dist/html'));
 });
 //压缩css
 gulp.task('minify_css', function() {
     return gulp.src('styles/*.css')      //压缩的文件
         .pipe(minifycss())   //执行压缩
-        .pipe(gulp.dest('dest/css'));   //输出文件夹
+        .pipe(gulp.dest('dist/css'));   //输出文件夹
         
 });
+// gulp.task('css', function() {
+//     return gulp.src('styles/main.css')      //压缩的文件
+//         .pipe(minifycss({ 
+//             advanced: true,//类型：Boolean 默认：true [是否开启高级优化（合并选择器等）]
+//             compatibility: 'ie7',//保留ie7及以下兼容写法 类型：String 默认：''or'*' [启用兼容模式； 'ie7'：IE7兼容模式，'ie8'：IE8兼容模式，'*'：IE9+兼容模式]
+//             keepBreaks: false}))//类型：Boolean 默认：false [是否保留换行]}))   //执行压缩
+//         .pipe(gulp.dest('dist/css'));   //输出文件夹
+        
+// });
 // //压缩css
 // gulp.task('minify_css', function() {
 //     return gulp.src('styles/*.css')      //压缩的文件
@@ -30,15 +39,15 @@ gulp.task('minify_css', function() {
 //压缩js
 gulp.task('minify_js', function() {
     return gulp.src('scripts/*.js')
-        .pipe(concat('main.js'))    //合并所有js到main.js
-        .pipe(gulp.dest('dest/js'))    //输出main.js到文件夹
-        .pipe(rename({suffix: '.min'}))   //rename压缩后的文件名
+        //.pipe(concat('main.js'))    //合并所有js到main.js
+        //.pipe(gulp.dest('dist/js'))    //输出main.js到文件夹
+        //.pipe(rename({suffix: '.min'}))   //rename压缩后的文件名
         .pipe(uglify())    //压缩
-        .pipe(gulp.dest('dest/js'));  //输出
+        .pipe(gulp.dest('dist/js'));  //输出
 });
 //执行压缩前，先删除文件夹里的内容
 gulp.task('clean', function(cb) {
- 	del(['dest/css', 'dest/js','dest/html'], cb);
+ 	del(['dist/css', 'dist/js','dist/html'], cb);
 
 });
 //默认命令，在cmd中输入gulp后，执行的就是这个命令
