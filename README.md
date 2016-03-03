@@ -17,6 +17,8 @@ static
 ```
 
 go http://localhost:8080
+## Usage
+- gulp
 
 ## TODO
 
