@@ -34,4 +34,5 @@ go http://localhost:8080
 - favicon.ico
 
 ## Done
-- compressed html css js to doucument dest
+
+- compressed html css js to doucument dist
