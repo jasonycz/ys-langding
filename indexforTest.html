@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Material Landing - Free Bootstrap Templates and Themes | NgTemplates</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/bootstrap.css">
+  
+
+
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">
+       
+    <!-- build:css({.tmp,client}) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="styles/ui.css">
+
+
+    </head>
+    <body ng-app='register'>
+    <!--if lt IE 9<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    -->
+   
+    <div class="page page-form" >
+         <div class="row">
+            <div class="col-lg-6 col-lg-offset-3 clearfix">
+                <h2 class="section-header text-center">Welcome to Join Us</h2>
+            </div>
+            <div class="col-md-12" >
+                <div class="panel panel-default">
+                    <div class="panel-body padding-xl" data-ng-controller="RegisterCtrl" >
+                        <div class="row" >
+                            <div class="col-lg-8 col-lg-offset-2" >
+                                <form name="material_signup_form" class="form-horizontal form-validation" data-ng-submit="submitForm()">
+                                      <fieldset>
+
+                                                      <md-input-container class="md-block">
+                                                          <label>工作室名称</label>
+                                                          <md-icon class="fa fa-university"></md-icon>
+                                                          <input required 
+                                                                 type="text"
+                                                                 name="studioName" 
+                                                                 ng-model="user.studioName">
+                                                          <div ng-messages="material_signup_form.studioName.$error" multiple ng-if='material_signup_form.studioName.$dirty'>
+                                                              <div ng-message="required">This is required.</div>
+                                          
+                                                          </div>
+                                                      </md-input-container>
+
+                                                      <div class="divider divider-md"></div>            
+                                                      <md-input-container class="md-block">
+                                                          <label>用户姓名</label>
+                                                          <md-icon class="fa fa-user"></md-icon>
+                                                          <input required 
+                                                                 type="text"
+                                                                 name="name" 
+                                                                 ng-model="user.name">
+                                                          <div ng-messages="material_signup_form.name.$error" multiple ng-if='material_signup_form.name.$dirty'>
+                                                              <div ng-message="required">This is required.</div>
+                                                              
+                                                          </div>
+                                                      </md-input-container>
+
+                                                      <div class="divider divider-md"></div>
+
+                                                      <md-input-container class="md-block">
+                                                          <label>联系电话</label>
+                                                          <md-icon class="fa fa-phone"></md-icon>
+                                                          <input required 
+                                                                 type="text"
+                                                                 name="phoneNum" 
+                                                                 ng-model="user.phoneNum"
+                                                                 ng-pattern="" />
+                                                          <div ng-messages="material_signup_form.phoneNum.$error" multiple ng-if='material_signup_form.phoneNum.$dirty'>
+                                                              <div ng-message="required">This is required.</div>
+                                                              <div ng-message="pattern">It must be an valid phone number.</div>
+                                                          </div>
+                                                      </md-input-container>
+
+                                                      <div class="divider divider-md"></div>
+
+                                                      <md-input-container class="md-block">
+                                                          <label>工作室地址</label>
+                                                          <md-icon class="fa fa-info"></md-icon>
+                                                          <input required 
+                                                                 type="text"
+                                                                 name="address" 
+                                                                 ng-model="user.address"
+                                                                 ng-pattern="" />
+                                                          <div ng-messages="material_signup_form.address.$error" multiple ng-if='material_signup_form.address.$dirty'>
+                                                              <div ng-message="required">This is required.</div>
+                                                          </div>
+                                                      </md-input-container>
+
+                                                      <div class="divider divider-md"></div>
+
+                                                      <md-input-container class="md-block">
+                                                         <label>工作室简介</label>
+                                                          <md-icon class="fa fa-file"></md-icon>
+                                                          <input 
+                                                                 required 
+                                                                 type="text"
+                                                                 name="studioDescribe" 
+                                                                 ng-model="user.studioDescribe"
+                                                                 ng-pattern="" /> 
+
+                                                          <div ng-messages="material_signup_form.studioDescribe.$error" multiple ng-if='material_signup_form.studioDescribe.$dirty'>
+                                                              <div ng-message="required">This is required.</div>
+                                                          </div>
+                                                      </md-input-container>
+
+                                                     <div class="divider divider-md"></div> 
+                                                    
+                                        <md-button type="submit"
+                                                   class="md-raised btn-w-md md-primary btn-block btn-lg"
+                                                   data-ng-disabled="!canSubmit()">Sign Up
+                                        </md-button>
+
+                                        <div class="divider"></div>
+
+                                        <div class="callout callout-info">
+                                            <strong >上面选项是必须填写项目，只有全部填写才能注册！</strong>
+                                        </div>
+                                        <div class="divider"></div>
+                                        <div class="alert alert-info" data-ng-show="showInfoOnSubmit">This is just  for demo. In real project, you will submit form with AJAX :)
+                                        </div>
+                                      </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+
+    </div> 
+
+    <!-- build:js scripts/vendor.js -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
+    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
+    <!-- endbuild -->
+
+
+    <!-- build:js scripts/ui.js -->
+    <script src="bower_components/angular-material/angular-material.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/jquery.slimscroll/jquery.slimscroll.min.js"></script>
+
+    <script src="bower_components/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
+    <script src="bower_components/ngmap/build/scripts/ng-map.min.js"></script>
+    <script src="bower_components/angular-scroll/angular-scroll.min.js"></script>
+    <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
+
+    <script src="bower_components/jquery-steps/build/jquery.steps.min.js"></script>
+    <script src="bower_components/angular-wizard/dist/angular-wizard.min.js"></script>
+
+    <script src="bower_components/textAngular/dist/textAngular-rangy.min.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular.min.js"></script>
+    <script src="bower_components/textAngular/dist/textAngular-sanitize.min.js"></script>
+
+    <script src="bower_components/angular-translate/angular-translate.min.js"></script>
+    <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+
+
+    <script src="scripts/register.js"></script>
+  </body>
+</html>
