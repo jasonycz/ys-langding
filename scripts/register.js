@@ -35,6 +35,7 @@
         };    
         $scope.submitForm = function() {
             $scope.showInfoOnSubmit = true;
+            console.log($scope.user);
             return $scope.revert();
         };           
     }
