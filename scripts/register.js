@@ -11,13 +11,16 @@
     angular.module('register')
         .controller('RegisterCtrl', ['$scope', RegisterCtrl]);
 
+
     function RegisterCtrl ($scope) {
         var original;
 
         $scope.user = {
             name: '',
-            email: '',
-            passowrd: ''
+            studioName: '',
+            phoneNum: '',
+            address: '',
+            studioDescribe: ''   
         }   
 
         original = angular.copy($scope.user);
@@ -35,8 +38,7 @@
         };    
         $scope.submitForm = function() {
             $scope.showInfoOnSubmit = true;
-            console.log($scope.user);
-            return $scope.revert();
+
         };           
     }
 

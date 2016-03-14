@@ -27,7 +27,7 @@
                     <div class="panel-body padding-xl" data-ng-controller="RegisterCtrl" >
                         <div class="row" >
                             <div class="col-lg-8 col-lg-offset-2" >
-                                <form name="material_signup_form" class="form-horizontal form-validation" data-ng-submit="submitForm()">
+                                <form name="material_signup_form" class="form-horizontal form-validation" data-ng-submit="submitForm()" method="POST" >
                                       <fieldset>
                                           <md-input-container class="md-block">
                                               <label>工作室名称</label>
@@ -42,7 +42,7 @@
                                               </div>
                                           </md-input-container>
 
-                                          <div class="divider divider-md"></div>            
+                                           <div class="divider divider-md"></div>            
                                           <md-input-container class="md-block">
                                               <label>用户姓名</label>
                                               <md-icon class="fa fa-user"></md-icon>
@@ -104,7 +104,7 @@
                                               </div>
                                           </md-input-container>
 
-                                         <div class="divider divider-md"></div> 
+                                         <div class="divider divider-md"></div>  
                                                     
                                         <md-button type="submit"
                                                    class="md-raised btn-w-md md-primary btn-block btn-lg"
