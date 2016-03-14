@@ -1,4 +1,3 @@
-
 (function () {
     'use strict';
     angular.module('register', ['ngMaterial','ngMessages'])
@@ -9,10 +8,10 @@
      });
 
     angular.module('register')
-        .controller('RegisterCtrl', ['$scope', RegisterCtrl]);
+        .controller('RegisterCtrl', ['$scope','$http', RegisterCtrl]);
 
 
-    function RegisterCtrl ($scope) {
+    function RegisterCtrl ($scope,$http) {
         var original;
 
         $scope.user = {
@@ -24,22 +23,24 @@
         }   
 
         original = angular.copy($scope.user);
-        $scope.revert = function() {
-            $scope.user = angular.copy(original);
-            $scope.material_signup_form.$setPristine();
-            $scope.material_signup_form.$setUntouched();
-            return;
-        };
-        $scope.canRevert = function() {
-            return !angular.equals($scope.user, original) || !$scope.material_signup_form.$pristine;
-        };
         $scope.canSubmit = function() {
             return $scope.material_signup_form.$valid && !angular.equals($scope.user, original);
         };    
         $scope.submitForm = function() {
             $scope.showInfoOnSubmit = true;
-
-        };           
+            $.ajax({
+                 type: "POST",
+                 url: "./test.php",
+                 data: $scope.user,
+                 dataType: "json",
+                 success: function(data){
+                    console.log(data);
+                 },    
+                 error :function(e){
+                    console.log(e);
+                 }
+            });
+        } 
     }
 
 
