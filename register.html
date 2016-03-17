@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="styles/ui.css">
     </head>
-    <body ng-app='register' >
+    <body ng-app='register'>
     <!--if lt IE 9<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     -->  
     <div class="page page-form" >
@@ -62,11 +62,11 @@
                                               <md-icon class="fa fa-phone"></md-icon>
                                               <input required 
                                                      type="text"
-                                                     name="phoneNum" 
+                                                     name="phoneNum"
                                                      ng-model="user.phoneNum"
-                                                     ng-pattern="" />
+                                                     ng-pattern="/^[1][358][0-9]{9}$/" />
                                               <div ng-messages="material_signup_form.phoneNum.$error" multiple ng-if='material_signup_form.phoneNum.$dirty'>
-                                                  <div ng-message="required">This is required.</div>
+                                                  
                                                   <div ng-message="pattern">It must be an valid phone number.</div>
                                               </div>
                                           </md-input-container>

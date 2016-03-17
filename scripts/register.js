@@ -10,7 +10,6 @@
     angular.module('register')
         .controller('RegisterCtrl', ['$scope','$http', RegisterCtrl]);
 
-
     function RegisterCtrl ($scope,$http) {
         var original;
 
