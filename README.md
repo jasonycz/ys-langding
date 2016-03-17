@@ -4,6 +4,7 @@
 
 ```
 bower install
+npm install
 ```
 
 ```
@@ -17,8 +18,6 @@ static
 ```
 
 go http://localhost:8080
-## Usage
-- gulp
 
 ## TODO
 
@@ -33,6 +32,6 @@ go http://localhost:8080
 - images/photo-1423xxx.jpg
 - favicon.ico
 
-## Done
+## Build
 
-- compressed html css js to doucument dist
+- npm run build
