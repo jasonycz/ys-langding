@@ -21,6 +21,7 @@
     "gulp-minify-html": "^1.0.6",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
+    "shipit-cli": "^1.4.1",
     "shipit-deploy": "^2.1.3"
   }
 }

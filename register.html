@@ -6,10 +6,9 @@
     <title>Material Landing - Free Bootstrap Templates and Themes | NgTemplates</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" >
     <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css">    
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"> 
     <!-- build:css({.tmp,client}) styles/main.css -->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
     <link rel="stylesheet" href="styles/ui.css">
@@ -57,23 +56,44 @@
                                           </md-input-container>
 
                                           <div class="divider divider-md"></div>
-                                          <md-input-container class="md-block">
-                                              <label>联系电话</label>
+
+                                          <md-input-container class=" md-block col-lg-6 " >
+                                              <label>手机号码</label>
                                               <md-icon class="fa fa-phone"></md-icon>
                                               <input required 
                                                      type="text"
                                                      name="phoneNum"
                                                      ng-model="user.phoneNum"
-                                                     ng-pattern="/^[1][358][0-9]{9}$/" />
+                                                     ng-pattern="/^[1][358][0-9]{9}$/"                          
+                                                     
+                                                     />
                                               <div ng-messages="material_signup_form.phoneNum.$error" multiple ng-if='material_signup_form.phoneNum.$dirty'>
                                                   
                                                   <div ng-message="pattern">It must be an valid phone number.</div>
                                               </div>
                                           </md-input-container>
+                                     
+                                          <md-input-container  class=" col-lg-6 md-block">
+                                              <label>验证码</label>
+                                              <md-icon class="fa fa-book"></md-icon>
+                                              <input required 
+                                                     type="text"
+                                                     name="code"
+                                                     ng-model="user.code"
+                                                     ng-pattern="/^[0-9]{5}$/" />
 
-                                          <div class="divider divider-md"></div>
+                                              <div ng-messages="material_signup_form.code.$error" multiple ng-if='material_signup_form.code.$dirty'>
+                                                  
+                                                  <div ng-message="pattern">It must be an valid code.</div>
+                                              </div>
+                                          </md-input-container> 
 
-                                          <md-input-container class="md-block">
+                                           <md-button class="md-raised btn-w-md md-primary col-lg-offset-10" data-ng-click="bindBtn()"   id="send-captcha" >发送短信验证码               
+                                           </md-button>
+
+                                          <div class="divider "></div>
+
+                                           <md-input-container class="md-block">
                                               <label>工作室地址</label>
                                               <md-icon class="fa fa-info"></md-icon>
                                               <input required 
@@ -84,7 +104,7 @@
                                               <div ng-messages="material_signup_form.address.$error" multiple ng-if='material_signup_form.address.$dirty'>
                                                   <div ng-message="required">This is required.</div>
                                               </div>
-                                          </md-input-container>
+                                          </md-input-container> 
 
                                           <div class="divider divider-md"></div>
 
@@ -131,5 +151,8 @@
     <script src="bower_components/angular-material/angular-material.min.js"></script>
 
     <script src="scripts/register.js"></script>
+
+
+
   </body>
 </html>
