@@ -40,7 +40,7 @@
               $.ajax({
                   // ajax接口调用...
                    type: "POST",
-                   url: "http://101.201.198.27:8080/user/getverify",
+                   url: "http://www.bellwebwork.com/user/getverify",
                    data: {"phone":$scope.user.phone},
                    dataType: "json",
                    success: function(data){
@@ -75,12 +75,12 @@
             $scope.showInfoOnSubmit = true;
             $.ajax({
                  type: "POST",
-                 url: "http://101.201.198.27:8080/studio/apply",
+                 url: "http://www.bellwebwork.com/studio/apply",
                  data: {"user_name":$scope.user.user_name,"name":$scope.user.name,"tel":$scope.user.phone,"address":$scope.user.address,"describe":$scope.user.describe,"verify_code":$scope.user.verify_code,},
                  dataType: "json",
                  success: function(data){
                     console.log(data);
-                    window.location.href="http://101.201.198.27/";
+                    window.location.href="http://www.bellwebwork.com/";
                  },    
                  error :function(e){
                     console.log(e);
