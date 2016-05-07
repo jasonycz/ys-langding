@@ -6,11 +6,11 @@
     <title>Material Landing - Free Bootstrap Templates and Themes | NgTemplates</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="bower_components/material-design-iconic-font/dist/css/material-design-iconic-font.min.css" >
+    <link rel="stylesheet" href="styles/css/material-design-iconic-font.css" >
     <link rel="stylesheet" href="styles/bootstrap.css">
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="styles/css/font-awesome.css"> 
     <!-- build:css({.tmp,client}) styles/main.css -->
-    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <link rel="stylesheet" href="styles/angular-material/angular-material.css">
     <link rel="stylesheet" href="styles/ui.css">
     </head>
     <body ng-app='register'>
@@ -33,9 +33,9 @@
                                               <md-icon class="fa fa-university"></md-icon>
                                               <input required 
                                                      type="text"
-                                                     name="studioName" 
-                                                     ng-model="user.studioName">
-                                              <div ng-messages="material_signup_form.studioName.$error" multiple ng-if='material_signup_form.studioName.$dirty'>
+                                                     name="name" 
+                                                     ng-model="user.name">
+                                              <div ng-messages="material_signup_form.name.$error" multiple ng-if='material_signup_form.name.$dirty'>
                                                   <div ng-message="required">This is required.</div>
                               
                                               </div>
@@ -47,9 +47,9 @@
                                               <md-icon class="fa fa-user"></md-icon>
                                               <input required 
                                                      type="text"
-                                                     name="name" 
-                                                     ng-model="user.name">
-                                              <div ng-messages="material_signup_form.name.$error" multiple ng-if='material_signup_form.name.$dirty'>
+                                                     name="user_name" 
+                                                     ng-model="user.user_name">
+                                              <div ng-messages="material_signup_form.user_name.$error" multiple ng-if='material_signup_form.user_name.$dirty'>
                                                   <div ng-message="required">This is required.</div>
                                                   
                                               </div>
@@ -62,12 +62,11 @@
                                               <md-icon class="fa fa-phone"></md-icon>
                                               <input required 
                                                      type="text"
-                                                     name="phoneNum"
-                                                     ng-model="user.phoneNum"
+                                                     name="phone"
+                                                     ng-model="user.phone"
                                                      ng-pattern="/^[1][358][0-9]{9}$/"                          
-                                                     
                                                      />
-                                              <div ng-messages="material_signup_form.phoneNum.$error" multiple ng-if='material_signup_form.phoneNum.$dirty'>
+                                              <div ng-messages="material_signup_form.phone.$error" multiple ng-if='material_signup_form.phone.$dirty'>
                                                   
                                                   <div ng-message="pattern">It must be an valid phone number.</div>
                                               </div>
@@ -78,17 +77,17 @@
                                               <md-icon class="fa fa-book"></md-icon>
                                               <input required 
                                                      type="text"
-                                                     name="code"
-                                                     ng-model="user.code"
-                                                     ng-pattern="/^[0-9]{5}$/" />
+                                                     name="verify_code"
+                                                     ng-model="user.verify_code"
+                                                     ng-pattern="/^[0-9]{6}$/" />
 
-                                              <div ng-messages="material_signup_form.code.$error" multiple ng-if='material_signup_form.code.$dirty'>
+                                              <div ng-messages="material_signup_form.verify_code.$error" multiple ng-if='material_signup_form.verify_code.$dirty'>
                                                   
-                                                  <div ng-message="pattern">It must be an valid code.</div>
+                                                  <div ng-message="pattern">It must be an valid verify_code.</div>
                                               </div>
                                           </md-input-container> 
 
-                                           <md-button class="md-raised btn-w-md md-primary col-lg-offset-10" data-ng-click="bindBtn()"   id="send-captcha" >发送短信验证码               
+                                           <md-button class="md-raised btn-w-md md-primary col-lg-offset-10" data-ng-click="bindBtn()"   data-ng-disabled='validation' id="send-captcha" >发送短信验证码               
                                            </md-button>
 
                                           <div class="divider "></div>
@@ -114,11 +113,11 @@
                                               <input 
                                                      required 
                                                      type="text"
-                                                     name="studioDescribe" 
-                                                     ng-model="user.studioDescribe"
+                                                     name="describe" 
+                                                     ng-model="user.describe"
                                                      ng-pattern="" /> 
 
-                                              <div ng-messages="material_signup_form.studioDescribe.$error" multiple ng-if='material_signup_form.studioDescribe.$dirty'>
+                                              <div ng-messages="material_signup_form.describe.$error" multiple ng-if='material_signup_form.describe.$dirty'>
                                                   <div ng-message="required">This is required.</div>
                                               </div>
                                           </md-input-container>
@@ -143,15 +142,15 @@
                 </div>
             </div>
     </div> 
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-    <script src="bower_components/angular-aria/angular-aria.min.js"></script>
-    <script src="bower_components/angular-messages/angular-messages.min.js"></script>
-    <script src="bower_components/angular-material/angular-material.min.js"></script>
+
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-animate.js"></script>
+    <script src="scripts/angular-aria.js"></script>
+    <script src="scripts/angular-messages.js"></script>
+    <script src="scripts/angular-material.js"></script>
 
     <script src="scripts/register.js"></script>
-
 
 
   </body>

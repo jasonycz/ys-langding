@@ -39,9 +39,31 @@ gulp.task('copy-fonts', function() {
       .pipe(gulp.dest('dist/styles/fonts'))
 })
 
+// 拷贝 css
+gulp.task('copy-css', function() {
+  return gulp.src('styles/css/*.*')
+      .pipe(gulp.dest('dist/styles/css'))
+})
+
+// 拷贝 css
+gulp.task('copy-angular-material', function() {
+  return gulp.src('styles/angular-material/*.*')
+      .pipe(gulp.dest('dist/styles/angular-material'))
+})
+
+
 // 执行压缩前，先删除文件夹里的内容
 gulp.task('clean', function(cb) {
  	del(['dist'], cb);
 })
 
-gulp.task('default', ['minify-css','minify-js','minify-html', 'copy-images', 'copy-fonts'])
+gulp.task('default', ['minify-css','minify-js','minify-html', 'copy-images', 'copy-fonts','copy-css','copy-angular-material'])
+
+
+// 测试压缩register.js
+
+gulp.task('minify-register', function() {
+    return gulp.src('scripts/register.js')
+        .pipe(uglify())
+        .pipe(gulp.dest('dist/scripts/'))
+})

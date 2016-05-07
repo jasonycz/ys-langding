@@ -12,7 +12,7 @@ module.exports = shipit => {
   })
 
   const localBuildPath = 'dist/'
-  const deployPath = '/data/apps/ys-landing/'
+  const deployPath = '/usr/share/nginx/ys-landing/'
 
   shipit.task('deploy', () => {
     shipit.local('npm run build')
